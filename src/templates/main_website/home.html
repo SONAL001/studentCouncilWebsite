@@ -13,8 +13,8 @@
 			{text-decoration: none;}
 			.fa {
     padding: 20px;
-    width: 60px;
-    height: 60px;
+    width: 35px;
+    height: 35px;
 
 
     text-align: center;
@@ -22,14 +22,18 @@
     border-radius: 50%;
 }
 .fa-facebook {
+    padding-left: 12px;
+    padding-top: 10px;
   background: #3B5998;
   color: white;
-  font-size: 27px;
+  font-size: 17px;
 }
 .fa-instagram {
+	padding-left: 12px;
+    padding-top: 10px;
   background: #125688;
   color: white;
-  font-size: 27px;
+  font-size: 17px;
 }
 		</style>
 	</head>
@@ -128,6 +132,7 @@
   		</div>
 		</nav>
 		</div>
+
 		
 		<div class="container-fluid">
 			<ul class="breadcrumb" >
@@ -135,6 +140,42 @@
 			<li class="breadcrumb-item"><a href="#"></a></li>
 			</ul>
 		</div>
+
+		<div class="container-fluid " style="margin-top:10px; display:inline-flex;">
+			<div class="col-lg-3" style="    margin-left: 15px;">
+
+				<div class="row">
+			        <div class="col s12">
+			          <div class="card grey lighten-5">
+						  <div class="card-header">
+							  <span class="card-title">What's happening in college?</span>
+						  </div>
+			            <div class="card-body blue-text text-darken-4">
+
+			             		<ul>
+												{% for item in events %}
+			                      <li>
+			                      	<a href="/events/{{item.id}}" class="event_item">
+			                      		<div class="event_datetime">
+			                      			<span class="event_month">{{item.start|date:"M"}}</span>
+			                      			<span class="event_day">{{item.start|date:"d"}}</span>
+			                      			<span class="event_time">{{item.start|date:"g:i a"}}</span>
+			                      		</div>
+			                      		<div class="event_name">
+			                      			<span>{{item.title}}</span>
+			                      		</div>
+			                      	</a>
+			                      </li>
+													{% endfor %}
+			                    </ul>
+			            </div>
+			            <div class="card-action card-footer	">
+			              <a href="/calendar">View All Events</a>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
 
 		<div class="container ">
 				<div class="row justify-content-center">
@@ -176,42 +217,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid " style="margin-top:10px; display:inline-flex;">
-			<div class="col-lg-5">
 
-				<div class="row">
-			        <div class="col s12">
-			          <div class="card grey lighten-5">
-						  <div class="card-header">
-							  <span class="card-title">What's happening in college?</span>
-						  </div>
-			            <div class="card-body blue-text text-darken-4">
-
-			             		<ul>
-												{% for item in events %}
-			                      <li>
-			                      	<a href="/events/{{item.id}}" class="event_item">
-			                      		<div class="event_datetime">
-			                      			<span class="event_month">{{item.start|date:"M"}}</span>
-			                      			<span class="event_day">{{item.start|date:"d"}}</span>
-			                      			<span class="event_time">{{item.start|date:"g:i a"}}</span>
-			                      		</div>
-			                      		<div class="event_name">
-			                      			<span>{{item.title}}</span>
-			                      		</div>
-			                      	</a>
-			                      </li>
-													{% endfor %}
-			                    </ul>
-			            </div>
-			            <div class="card-action card-footer	">
-			              <a href="/calendar">View All Events</a>
-			            </div>
-			          </div>
-			        </div>
-			    </div>
-			</div>
-			<div class="col-lg-5">
+			<div class="col-lg-3" style="    margin-right: 15px;">
 				<div class="grey-text">
 
 		        </div>
@@ -246,18 +253,20 @@
 				<p class="col-lg-12 text-white center " style="text-align: center;" >NITK Student Council </p>
 			</div>
 			<hr color="white" style="width: 1350px;"/>
-			<div class="row" style="margin-bottom: 8px;">
+			<div class="row" style="margin-bottom: -10px;">
 				<div class="col-lg-3" style="text-align:center; color:white;">
 					<a>About Us</a>
+					<p style="font-size: 10px;font-style: italic;color: gray;">To know more about the Student Council</p>
 				</div>
 				<div class="col-lg-3" style="text-align:center;">
-					<a><i class="fa fa-facebook"></i></a>
+					<a class="face-icon"><i class="fa fa-facebook"></i></a>
 				</div>
 				<div class="col-lg-3" style="text-align:center;">
-					<a><i class="fa fa-instagram"></i></a>
+					<a class="face-icon"><i class="fa fa-instagram"></i></a>
 				</div>
 				<div class="col-lg-3" style="text-align:center;color:white;">
 					<a>Contact Us</a>
+					<p style="font-size: 10px;font-style: italic;color: gray;">email-student_council@gmail.com</p>
 				</div> 
 			</div>
 
@@ -269,13 +278,10 @@
 		</nav>
 		</div>
 
-=======
-		<br>
-		<footer class="container-fluid bg-dark text-center fixed-bottom" style="height: 20px" >
-			<p class="text-white">Developed by NITK-MCA</p>
-  		</footer>
+
+
 		
->>>>>>> ed00e656d850aaaaeacbe84abaa452b143b4cf51
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
